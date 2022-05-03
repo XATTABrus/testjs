@@ -83,30 +83,48 @@ function httpPost(url, key, show_block) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var search_btn = document.getElementById('search');
-    var search_push_btn = document.getElementById('search_push');
-    var input_phone = document.getElementById('phone-number');
+// document.addEventListener('DOMContentLoaded', function() {
+//     var search_btn = document.getElementById('search');
+//     var search_push_btn = document.getElementById('search_push');
+//     var input_phone = document.getElementById('phone-number');
 
-    input_phone.addEventListener('keydown', function(e) {
-        if (e.keyCode === 13) {
-            e.preventDefault();
-            search_push_btn.click();
-        }
-    });
+//     input_phone.addEventListener('keydown', function(e) {
+//         if (e.keyCode === 13) {
+//             e.preventDefault();
+//             search_push_btn.click();
+//         }
+//     });
 
-    search_btn.addEventListener('click', function() {
-        input_number = document.getElementById('phone-number').value;
-        httpPost(api_url, input_number, true);
-    });
+//     search_btn.addEventListener('click', function() {
+//         input_number = document.getElementById('phone-number').value;
+//         httpPost(api_url, input_number, true);
+//     });
 
-    search_push_btn.addEventListener('click', function() {
-        input_number = document.getElementById('phone-number').value;
-        httpPost(api_url, input_number, false)
-        setTimeout(function() { window.close(); }, 700);
-    });
+//     search_push_btn.addEventListener('click', function() {
+//         input_number = document.getElementById('phone-number').value;
+//         httpPost(api_url, input_number, false)
+//         setTimeout(function() { window.close(); }, 700);
+//     });
+// });
 
-    alert('loaded');
+var search_btn = document.getElementById('search');
+var search_push_btn = document.getElementById('search_push');
+var input_phone = document.getElementById('phone-number');
+
+input_phone.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        search_push_btn.click();
+    }
 });
 
-alert('loaded2');
+search_btn.addEventListener('click', function() {
+    input_number = document.getElementById('phone-number').value;
+    httpPost(api_url, input_number, true);
+});
+
+search_push_btn.addEventListener('click', function() {
+    input_number = document.getElementById('phone-number').value;
+    httpPost(api_url, input_number, false)
+    setTimeout(function() { window.close(); }, 700);
+});
