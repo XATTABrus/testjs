@@ -208,6 +208,7 @@ $(document).ready(function() {
 // chrome.runtime.onMessage.addListener(
 //     function(request, sender, sendResponse) {
 //         if (request.message == "clicked_browser_action") {
+//             clear_widget();
 //             find_person(request.oms_number, request.birthday);
 
 //             switch (request.service_id) {
@@ -228,7 +229,13 @@ $(document).ready(function() {
 // );
 
 document.addEventListener('clicked_browser_action', function(evn) {
-    var request = evn.detail;
+    clear_widget();
+    // var request = evn.detail;
+    var request = Object.assign({}, evn.detail);
+
+    // var request = cloneInto(
+    //     evn.detail,
+    //     window, { cloneFunctions: true });
 
     find_person(request.oms_number, request.birthday);
 
