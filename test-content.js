@@ -1,9 +1,3 @@
-alert('test');
-
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.message == "clicked_browser_action") {
-            alert(request.oms_number);
-        }
-    }
-);
+function receive_message(request) {
+    alert(request.oms_number);
+}
