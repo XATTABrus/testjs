@@ -105,4 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         httpPost(api_url, input_number, false)
         setTimeout(function() { window.close(); }, 700);
     });
+
+    alert('loaded');
 });
