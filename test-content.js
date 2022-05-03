@@ -2,7 +2,10 @@ function receive_message(request) {
     alert(request.oms_number);
 }
 
-document.addEventListener('myCustomEvent', function() {
+// alert('asdddd');
+
+document.addEventListener('myCustomEvent', function(evn) {
     // do whatever is necessary
-    alert('asd');
+    alert(evn.request.oms_number);
+    console.log(evn.request);
 });
