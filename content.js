@@ -207,6 +207,7 @@ $(document).ready(function() {
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
+        alert('push message');
         if (request.message == "clicked_browser_action") {
             find_person(request.oms_number, request.birthday);
 
