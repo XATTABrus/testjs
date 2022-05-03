@@ -232,6 +232,7 @@ document.addEventListener('clicked_browser_action', function(evn) {
     clear_widget();
     // var request = evn.detail;
     var request = Object.assign({}, evn.detail);
+    console.log(request);
 
     // var request = cloneInto(
     //     evn.detail,
