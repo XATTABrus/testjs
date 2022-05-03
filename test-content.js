@@ -7,5 +7,5 @@ function receive_message(request) {
 document.addEventListener('myCustomEvent', function(evn) {
     // do whatever is necessary
     // alert(evn.request.oms_number);
-    console.log(evn.request);
+    console.log(evn);
 });
