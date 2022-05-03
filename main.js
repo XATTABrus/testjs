@@ -108,3 +108,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     alert('loaded');
 });
+
+alert('loaded2');
